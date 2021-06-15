@@ -19,7 +19,7 @@ class TestEjercito {
 		Ejercito ejercitoWrive = new Ejercito();
 		Wrives guerrero = new Wrives();
 		ejercitoWrive.agregar(guerrero);
-		Assertions.assertEquals(108	, ejercitoWrive.obtenerSiguiente().getSalud());
+		Assertions.assertEquals(Integer.MAX_VALUE	, ejercitoWrive.getSalud());
 	}
 	
 	@Test
