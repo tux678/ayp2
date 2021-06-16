@@ -36,7 +36,8 @@ public class Grafo<T> {
 		return vertices[0].getDato();
 	}
 
-	public void getCosto(T verticeOrigen, T verticeDestino) {
+	public Integer getCosto( T verticeDestino) {
+		return vertices[0].getSiguienteArista().getPeso();
 		// TODO Auto-generated method stub
 		
 	}

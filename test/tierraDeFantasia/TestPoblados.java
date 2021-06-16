@@ -48,7 +48,8 @@ class TestPoblados {
 	@Test
 	void testGetCostoDeTrasladoAlPueblo2() {
 		Mapa mapa = new Mapa();
-		Assertions.assertEquals(10, mapa.getCosto(2));
+		Pueblo puebloDestino = new Pueblo(2);
+		Assertions.assertEquals(10, mapa.getCosto(puebloDestino));
 	}
 
 }

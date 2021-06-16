@@ -13,6 +13,11 @@ public class Pueblo {
 		this.setNombre(datosDelPueblo[2].trim());
 	}
 	
+	public Pueblo(int id) {
+		// TODO Auto-generated constructor stub
+		this.id = id;
+	}
+
 	private void setNombre(String nuevoPueblo) {
 		// TODO Auto-generated method stub
 		this.nombre = nuevoPueblo;

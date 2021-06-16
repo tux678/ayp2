@@ -116,10 +116,9 @@ public class Mapa {
 		return this.puebloFinal;
 	}
 
-	public Integer getCosto(int puebloDestino) {
+	public Integer getCosto(Pueblo puebloDestino) {
 		// TODO Auto-generated method stub
-		poblados.getCosto(poblados.getPrimero().getId(), puebloDestino);
-		return null;
+		return poblados.getCosto( puebloDestino);
 	}
 	
 }
