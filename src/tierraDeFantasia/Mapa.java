@@ -50,6 +50,7 @@ public class Mapa {
 			if((lectorDeArchivo.readLine()) != null) {
 				leerPoblados(lectorDeArchivo);
 				leerRecorrido(lectorDeArchivo);
+				leerCaminos(lectorDeArchivo);
 			}
 			lectorDeArchivo.close();
 		} catch (FileNotFoundException e) {
@@ -59,6 +60,17 @@ public class Mapa {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	private void leerCaminos(BufferedReader lectorDeArchivo) throws IOException {
+		// TODO Auto-generated method stubidPuebloDestino
+		String[] caminos = lectorDeArchivo.readLine().split(" ");
+		this.agregarCamino(Integer.valueOf(caminos[0].trim()), Integer.valueOf(caminos[1].trim()),Integer.valueOf(caminos[2].trim()));
+	}
+	private void agregarCamino(Integer idPuebloOrigen, Integer idPuebloDestino, Integer dias) {
+		// TODO Auto-generated method stub
+		//this.poblados.agregarArista(new Vertice<Pueblo>(new Pueblo(idPuebloOrigen)),new Vertice<Pueblo>(new Pueblo(idPuebloDestino)), dias);
+
 	}
 
 	private void leerRecorrido(BufferedReader lectorDeArchivo) throws IOException {

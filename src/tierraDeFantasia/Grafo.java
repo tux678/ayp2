@@ -6,13 +6,15 @@ public class Grafo<T> {
 	private Vertice<T>[] vertices;
 	private int ultimoDisponible = 0;
 	
+	@SuppressWarnings("unchecked")
 	public Grafo() {
-		vertices = new Vertice[10];
+		vertices = (Vertice<T>[] ) new Vertice[10];
 	}
 
+	@SuppressWarnings("unchecked")
 	public Grafo(Integer cantidadDePoblados) {
 		// TODO Auto-generated constructor stub
-		vertices = new Vertice[cantidadDePoblados];
+		vertices = (Vertice<T>[] ) new Vertice[cantidadDePoblados];
 	}
 
 	public void agregar(T dato) {
@@ -40,5 +42,29 @@ public class Grafo<T> {
 		return vertices[0].getSiguienteArista().getPeso();
 		// TODO Auto-generated method stub
 		
+	}
+
+	public void agregarArista(Vertice<T> verticeOrigen, Vertice<T> verticeDestino, Integer dias) {
+		// TODO Auto-generated method stub
+		Vertice<T> verticeO = this.buscar(verticeOrigen);
+		Vertice<T> verticeD = this.buscar(verticeDestino);
+		
+		if( verticeO == null || verticeD == null)
+			throw new VerticeNoExisteExceptions();
+		
+		if(verticeO.getSiguienteArista() == null )
+			verticeO.setSiguienteArista(new Arista<T>(verticeO, verticeD, dias));
+		
+	}
+
+	private Vertice<T> buscar(Vertice<T> vertice) {
+		int i = 0;
+		// TODO Auto-generated method stub
+		while(i< vertices.length  && !vertices[i].equals(vertice))
+			i++;
+		if(i<vertices.length)
+			return vertices[i];
+		return null;
+			
 	}
 }

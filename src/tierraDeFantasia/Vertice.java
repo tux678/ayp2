@@ -17,13 +17,13 @@ public class Vertice<T> {
 
 	public Arista<T> getSiguienteArista() {
 		// TODO Auto-generated method stub
-		try {
-			if(this.siguiente == null)
-				throw new NoHayAristaExceptions();
-		} catch (NoHayAristaExceptions e) {
-			System.err.println(e);
-		}
 		return siguiente;
+	}
+
+	public void setSiguienteArista(Arista<T> arista) {
+		// TODO Auto-generated method stub
+		this.siguiente = arista;
+		
 	}
 
 }
